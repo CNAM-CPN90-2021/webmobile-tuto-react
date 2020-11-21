@@ -1,39 +1,16 @@
-import { useState, useEffect } from "react";
+import { Exercice1 } from "./Exercice1";
+import { Exercice2 } from "./Exercice2";
+import { Exercice3 } from "./Exercice3";
 import "./App.css";
 
-function App() {
-  const [timeSpent, setTimeSpent] = useState(0);
-
-  useEffect(() => {
-    setInterval(() => {
-      setTimeSpent((value) => value + 1);
-    }, 1000);
-  }, []);
-
+export function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
-
-      <time>Le temps écoulé est : {timeSpent} secondes</time>
-
-      <br />
-      <Button />
+      <Exercice3 />
+      <hr />
+      <Exercice2 />
+      <hr />
+      <Exercice1 />
     </div>
   );
 }
-
-function Button() {
-  const [timesClicked, setTimesClicked] = useState(0);
-
-  return (
-    <button
-      onClick={() => {
-        setTimesClicked(timesClicked + 1);
-      }}
-    >
-      Cliquez moi ! (cliqué: {timesClicked} fois)
-    </button>
-  );
-}
-
-export default App;
